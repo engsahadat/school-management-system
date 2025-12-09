@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>School Result Management System</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <i class="fas fa-graduation-cap"></i>
+                <h1>School Result Management</h1>
+            </div>
+            <nav class="nav">
+                <a href="#dashboard" class="nav-link active" data-section="dashboard">
+                    <i class="fas fa-home"></i> Dashboard
+                </a>
+                <a href="#add-student" class="nav-link" data-section="add-student">
+                    <i class="fas fa-user-plus"></i> Add Student
+                </a>
+                <a href="#view-results" class="nav-link" data-section="view-results">
+                    <i class="fas fa-chart-line"></i> View Results
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            
+            <!-- Dashboard Section -->
+            <section id="dashboard" class="section active">
+                <div class="section-header">
+                    <h2>Dashboard Overview</h2>
+                    <p>Welcome to the School Result Management System</p>
+                </div>
+                
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3 id="total-students">0</h3>
+                            <p>Total Students</p>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <div class="stat-icon" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
+                            <i class="fas fa-trophy"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3 id="passed-students">0</h3>
+                            <p>Passed Students</p>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <div class="stat-icon" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
+                            <i class="fas fa-chart-bar"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3 id="avg-percentage">0%</h3>
+                            <p>Average Percentage</p>
+                        </div>
+                    </div>
+                    
+                    <div class="stat-card">
+                        <div class="stat-icon" style="background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);">
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <div class="stat-info">
+                            <h3 id="top-scorer">N/A</h3>
+                            <p>Top Scorer</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="recent-section">
+                    <h3>Recent Students</h3>
+                    <div id="recent-students" class="table-responsive">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>Roll No</th>
+                                    <th>Name</th>
+                                    <th>Class</th>
+                                    <th>Percentage</th>
+                                    <th>Grade</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody id="recent-students-body">
+                                <tr>
+                                    <td colspan="6" class="no-data">No students added yet</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Add Student Section -->
+            <section id="add-student" class="section">
+                <div class="section-header">
+                    <h2>Add New Student Result</h2>
+                    <p>Enter student details and marks</p>
+                </div>
+
+                <div class="form-container">
+                    <form id="student-form" class="student-form">
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="rollNo">
+                                    <i class="fas fa-id-card"></i> Roll Number
+                                </label>
+                                <input type="text" id="rollNo" name="rollNo" required placeholder="Enter roll number">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="studentName">
+                                    <i class="fas fa-user"></i> Student Name
+                                </label>
+                                <input type="text" id="studentName" name="studentName" required placeholder="Enter full name">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="class">
+                                    <i class="fas fa-school"></i> Class
+                                </label>
+                                <select id="class" name="class" required>
+                                    <option value="">Select Class</option>
+                                    <option value="1">Class 1</option>
+                                    <option value="2">Class 2</option>
+                                    <option value="3">Class 3</option>
+                                    <option value="4">Class 4</option>
+                                    <option value="5">Class 5</option>
+                                    <option value="6">Class 6</option>
+                                    <option value="7">Class 7</option>
+                                    <option value="8">Class 8</option>
+                                    <option value="9">Class 9</option>
+                                    <option value="10">Class 10</option>
+                                    <option value="11">Class 11</option>
+                                    <option value="12">Class 12</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="section">
+                                    <i class="fas fa-layer-group"></i> Section
+                                </label>
+                                <select id="section" name="section" required>
+                                    <option value="">Select Section</option>
+                                    <option value="A">Section A</option>
+                                    <option value="B">Section B</option>
+                                    <option value="C">Section C</option>
+                                    <option value="D">Section D</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="marks-section">
+                            <h3><i class="fas fa-book"></i> Subject Marks (Out of 100)</h3>
+                            <div class="form-grid">
+                                <div class="form-group">
+                                    <label for="mathematics">Mathematics</label>
+                                    <input type="number" id="mathematics" name="mathematics" min="0" max="100" required placeholder="0-100">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="science">Science</label>
+                                    <input type="number" id="science" name="science" min="0" max="100" required placeholder="0-100">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="english">English</label>
+                                    <input type="number" id="english" name="english" min="0" max="100" required placeholder="0-100">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="social">Social Studies</label>
+                                    <input type="number" id="social" name="social" min="0" max="100" required placeholder="0-100">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="language">Hindi/Regional Language</label>
+                                    <input type="number" id="language" name="language" min="0" max="100" required placeholder="0-100">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="computer">Computer Science</label>
+                                    <input type="number" id="computer" name="computer" min="0" max="100" required placeholder="0-100">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn-primary">
+                                <i class="fas fa-save"></i> Save Result
+                            </button>
+                            <button type="reset" class="btn btn-secondary">
+                                <i class="fas fa-redo"></i> Reset Form
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </section>
+
+            <!-- View Results Section -->
+            <section id="view-results" class="section">
+                <div class="section-header">
+                    <h2>Student Results</h2>
+                    <p>Search and view all student results</p>
+                </div>
+
+                <div class="search-filter">
+                    <div class="search-box">
+                        <i class="fas fa-search"></i>
+                        <input type="text" id="search-input" placeholder="Search by name, roll number, or class...">
+                    </div>
+                    
+                    <div class="filter-options">
+                        <select id="filter-class" class="filter-select">
+                            <option value="">All Classes</option>
+                            <option value="1">Class 1</option>
+                            <option value="2">Class 2</option>
+                            <option value="3">Class 3</option>
+                            <option value="4">Class 4</option>
+                            <option value="5">Class 5</option>
+                            <option value="6">Class 6</option>
+                            <option value="7">Class 7</option>
+                            <option value="8">Class 8</option>
+                            <option value="9">Class 9</option>
+                            <option value="10">Class 10</option>
+                            <option value="11">Class 11</option>
+                            <option value="12">Class 12</option>
+                        </select>
+
+                        <select id="filter-status" class="filter-select">
+                            <option value="">All Status</option>
+                            <option value="Pass">Passed</option>
+                            <option value="Fail">Failed</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="table-responsive">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Roll No</th>
+                                <th>Name</th>
+                                <th>Class</th>
+                                <th>Section</th>
+                                <th>Total Marks</th>
+                                <th>Percentage</th>
+                                <th>Grade</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="results-table-body">
+                            <tr>
+                                <td colspan="9" class="no-data">No results found</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Pagination -->
+                <div id="pagination-container" class="pagination"></div>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- Student Detail Modal -->
+    <div id="detail-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Student Details</h2>
+                <button class="close-btn" onclick="closeModal()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body" id="modal-body-content">
+                <!-- Dynamic content will be inserted here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 School Result Management System. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
