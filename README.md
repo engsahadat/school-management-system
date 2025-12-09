@@ -43,13 +43,13 @@ The application runs in any up-to-date browser that supports:
 
 ## Screenshots
 <p align="center">
-	<img src="assets/dashboard-overview.png" alt="Dashboard overview with key metrics" width="700" />
+	<img src="assets/dashboard.png" alt="Dashboard overview with key metrics" width="700" />
 </p>
 <p align="center">
-	<img src="assets/add-student-result.png" alt="Add new student result form" width="700" />
+	<img src="assets/add-student.png" alt="Add new student result form" width="700" />
 </p>
 <p align="center">
-	<img src="assets/student-results.png" alt="Student results table with filters and actions" width="700" />
+	<img src="assets/view-result.png" alt="Student results table with filters and actions" width="700" />
 </p>
 
 ## Getting Started for Development
